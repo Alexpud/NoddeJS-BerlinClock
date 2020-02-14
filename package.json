@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-berlinclock",
+  "version": "1.0.0",
+  "description": "The Berlin Uhr (Clock) is a rather strange way to show the time. On the top of the clock there is a yellow lamp that blinks on/off every two seconds. The time is calculated by adding rectangular lamps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexpud/NodeJS-BerlinClock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexpud/NodeJS-BerlinClock/issues"
+  },
+  "homepage": "https://github.com/Alexpud/NodeJS-BerlinClock#readme",
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}
