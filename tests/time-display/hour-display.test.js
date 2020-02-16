@@ -10,8 +10,7 @@ describe ('Should validate hours before displaying it', () => {
 
 describe ('Display hours of the berlin clock', () => {
   it ('Should display correctly 0 hours', () => {
-    let expectedDisplayedHours = `OOOO
-    OOOO`;
+    let expectedDisplayedHours = `OOOO\nOOOO`;
 
     let displayedHours = hourDisplay.display('00');
 
