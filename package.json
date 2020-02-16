@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Alexpud/NodeJS-BerlinClock#readme",
   "dependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "standard": "^14.3.1"
   }
 }

@@ -1,13 +1,44 @@
-var berlinClock = require('../berlin-clock/berlin-clock');
+const berlinClock = require('../berlin-clock/berlin-clock');
 
-describe ("Test clock validation", () => {
-  it ('should throw exception for invalid time format', () => {
-    expect(() => { berlinClock.convert("00:00:00:0");}).toThrow(Error);
+describe ("Berlin clock should show", () => {
+  it ("should display correct hour for 00:00:00", () => {
+    expect(berlinClock.convert("00:00:00")).toBe(`""""
+    Y 
+    OOOO
+    OOOO
+    OOOOOOOOOOO
+    OOOO
+    """`);
   });
 
-  it ('should throw exception for invalid time: containing non numeric characters', () => {
-    expect(() => {
-      berlinClock.convert("aaadasd:00:00");
-    }).toThrow(Error)
+  it ("shold display correct hour for 13:17:01", () => {
+    expect(berlinClock.convert("13:17:01")).toBe(`"""
+    O
+    RROO
+    RRRO
+    YYROOOOOOOO
+    YYOO
+    """`);
   });
-});
+
+  it ("should display correct hour for 23:59:59", () => {
+    expect(berlinClock.convert("23:59:59")).toBe(`"""
+    O
+    RRRR
+    RRRO
+    YYRYYRYYRYY
+    YYYY
+    """`);
+  });
+
+  it ("should display correct hour for 24:00:00", () => {
+    expect(berlinClock.convert("23:59:59")).toBe(`"""
+    Y
+    RRRR
+    RRRR
+    OOOOOOOOOOO
+    OOOO
+    """`);
+  });
+  
+})
