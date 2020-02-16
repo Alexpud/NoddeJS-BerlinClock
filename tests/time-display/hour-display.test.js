@@ -6,6 +6,12 @@ describe ('Should validate hours before displaying it', () => {
       hourDisplay.display('aa');
     }).toThrow(Error);
   });
+
+  it ('Should throw error when hours is a negative number', () => {
+    expect(() => {
+      hourDisplay.display('-40');
+    }).toThrow(Error);
+  });
 });
 
 describe ('Display hours of the berlin clock', () => {
@@ -14,6 +20,22 @@ describe ('Display hours of the berlin clock', () => {
 
     let displayedHours = hourDisplay.display('00');
 
+    expect(displayedHours).toBe(expectedDisplayedHours);
+  });
+
+  it ('Should display correctly 3 hours', () => {
+    let expectedDisplayedHours = `OOOO\nRRRO`;
+  
+    let displayedHours = hourDisplay.display('03');
+  
+    expect(displayedHours).toBe(expectedDisplayedHours);
+  });
+
+  it ('Should display correctly 19 hours', () => {
+    let expectedDisplayedHours = `RRRO\nRRRR`;
+  
+    let displayedHours = hourDisplay.display('19');
+  
     expect(displayedHours).toBe(expectedDisplayedHours);
   });
 });
