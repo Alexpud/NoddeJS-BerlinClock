@@ -38,4 +38,12 @@ describe ('Display hours of the berlin clock', () => {
   
     expect(displayedHours).toBe(expectedDisplayedHours);
   });
+
+  it ('Should display correctly 29 hours', () => {
+    let expectedDisplayedHours = `ROOO\nOOOO`;
+  
+    let displayedHours = hourDisplay.display('29');
+  
+    expect(displayedHours).toBe(expectedDisplayedHours);
+  });
 });
