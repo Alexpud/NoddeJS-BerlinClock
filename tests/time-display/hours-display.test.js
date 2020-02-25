@@ -1,13 +1,13 @@
 const hoursDisplay = require('../../berlin-clock/time-display/hours-display');
 
-describe ('Should validate hours before displaying it', () => {
-  it ('Should throw error when hours is not numeric', () => {
+describe ('Should throw an error if hours are not valid', () => {
+  it ('Should throw error when hours are not a numeric value', () => {
     expect(() => {
       hoursDisplay.display('aa');
     }).toThrow(Error);
   });
 
-  it ('Should throw error when hours is a negative number', () => {
+  it ('Should throw error when hours are a negative number', () => {
     expect(() => {
       hoursDisplay.display('-40');
     }).toThrow(Error);
