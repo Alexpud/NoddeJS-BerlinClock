@@ -2,7 +2,7 @@ const LAMPS_PER_ROW = 4;
 const constants = require('../model/constants');
 
 exports.display = (hours) => {
-  validateHors(hours);
+  throwIfInvalidHours(hours);
   
   ({ firstRowSwitchedOnLamps, secondRowSwitchedOnLamps } = switchedOnLampsOnTwoRows(hours));
   var displayedHours = displayLampRow(firstRowSwitchedOnLamps);
@@ -12,7 +12,7 @@ exports.display = (hours) => {
   return displayedHours;
 }
 
-function validateHors(hours) {
+function throwIfInvalidHours(hours) {
   if (isNaN(hours)) {
     throw Error(`Invalid hours: non numeric characters present. Hours value: ${hours}`);
   }
